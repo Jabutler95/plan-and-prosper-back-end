@@ -13,6 +13,7 @@ const incomeSchema = new Schema(
       //required when creating, or no?
       //required: true,
     },
+    //date of what? when payment comes in? (interaction w "frequency" going to be ok?)
     date: {
       type: Date,
       //required when creating, or no?
