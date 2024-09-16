@@ -11,12 +11,12 @@ const incomeSchema = new Schema(
     amount: {
       type: Number,
       //required when creating, or no?
-      required: true,
+      //required: true,
     },
     date: {
       type: Date,
       //required when creating, or no?
-      required: true,
+      //required: true,
     },
     frequency: {
       type: String,
