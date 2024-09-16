@@ -21,13 +21,13 @@ const incomeSchema = new Schema(
     frequency: {
       type: String,
       required: true,
-      enum: ['News', 'Sports', 'Games', 'Movies', 'Music', 'Television'],
+      enum: ['Monthly', 'Weekly', 'Non-regular', 'Other'],
     },
     author: { type: Schema.Types.ObjectId, ref: 'Profile' }
   },
   { timestamps: true }
 )
 
-const Blog = mongoose.model('Blog', blogSchema)
+const Income = mongoose.model('Income', incomeSchema)
 
-export { Blog }
+export { Income }
