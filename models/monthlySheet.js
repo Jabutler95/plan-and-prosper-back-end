@@ -23,8 +23,8 @@ const miscIncomeSchema = new Schema({
 const monthlySheetSchema = new Schema({
   name: String,
   owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
-  expense: [expenseSchema],
-  miscIncome: [miscIncomeSchema],
+  // expense: [expenseSchema],
+  // miscIncome: [miscIncomeSchema],
   // bill: { type: Schema.Types.ObjectId, ref: 'Bill'},
   // income: { type: Schema.Types.ObjectId, ref: 'Income'},
   // budget: { type: Schema.Types.ObjectId, ref: 'Budget'},
