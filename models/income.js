@@ -21,7 +21,7 @@ const incomeSchema = new Schema(
     frequency: {
       type: String,
       required: true,
-      enum: ['Monthly', 'Weekly', 'Non-regular', 'Other'],
+      enum: ['Monthly', 'Twice-per-month', 'Weekly', 'Non-regular'],
     },
     author: { type: Schema.Types.ObjectId, ref: 'Profile' }
   },
