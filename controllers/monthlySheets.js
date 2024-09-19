@@ -30,7 +30,19 @@ async function index(req, res) {
   }
 }
 
+async function show(req, res) {
+  try {
+    const monthlySheet = await MonthlySheet.findById(req.params.monthlySheetId)
+      .populate(['owner', 'miscIncome.owner', 'expense.owner'])
+    res.status(200).json(monthlySheet)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json(error)
+  }
+}
+
 export { 
   create,
   index, 
+  show,
 }

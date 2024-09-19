@@ -11,6 +11,7 @@ const router = Router()
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, monthlySheetsCtrl.create)
 router.get('/', checkAuth, monthlySheetsCtrl.index)
+router.get('/:monthlySheetId', checkAuth, monthlySheetsCtrl.show)
 
 
 export { router }
