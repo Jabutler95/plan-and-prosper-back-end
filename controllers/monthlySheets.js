@@ -41,8 +41,23 @@ async function show(req, res) {
   }
 }
 
+async function update(req, res) {
+  try {
+    const monthlySheet = await findByIdAndUpdate(
+      req.params.monthlySheetId,
+      req.body,
+      { new: true }
+    ).populate('owner')
+    res.status(200).json(monthlySheet)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json(error)
+  }
+}
+
 export { 
   create,
   index, 
   show,
+  update
 }

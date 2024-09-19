@@ -12,6 +12,7 @@ router.use(decodeUserFromToken)
 router.post('/', checkAuth, monthlySheetsCtrl.create)
 router.get('/', checkAuth, monthlySheetsCtrl.index)
 router.get('/:monthlySheetId', checkAuth, monthlySheetsCtrl.show)
+router.put('/:monthlySheetId', checkAuth, monthlySheetsCtrl.update)
 
 
 export { router }
