@@ -10,15 +10,18 @@ const incomeSchema = new Schema(
     },
     amount: {
       type: Number,
-      //required when creating, or no?
-      //required: true,
+      required: true,
     },
-    //date of what? when payment comes in? (interaction w "frequency" going to be ok?)
+    // Need to discuss this field - JB 
     date: {
       type: Date,
-      //required when creating, or no?
-      //required: true,
+      required: true,
+      // this function will convert the date to an object to support formating our dates as MM/DD/YYYY vs this (YYYY-MM-DDTHH:mm:ss.sssZ)
+      set: function (value) {
+        return new Date(value)
+      }
     },
+    // I set a similar situation to the below up to have it's frequency set to a number. I just want to test which method will be the best between the enum and number. - JB 
     frequency: {
       type: String,
       required: true,
