@@ -3,9 +3,18 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const debtSchema = new Schema({
-  name: String,
-  initial: Number,
-  remaining: Number,
+  name: {
+    type: String,
+    required: true
+  },
+  initial: {
+    type: Number,
+    required: true
+  },
+  remaining: {
+    type: Number,
+    required: true
+  },
 },{
   timestamps: true,
 })
