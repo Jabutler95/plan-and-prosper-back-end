@@ -55,9 +55,23 @@ async function update(req, res) {
   }
 }
 
+async function deleteMonthlySheet(req, res) {
+  try {
+    const monthlySheet = await findByIdAndDelete(req.params.monthlySheetId)
+    const profile = await Profile.findById(req.user.profile)
+    profile.monthlySheets.remove({ _id: req.params.monthlySheetId })
+    await profile.save()
+    res.status(200).json(monthlySheet)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json(error)
+  }
+} 
+
 export { 
   create,
   index, 
   show,
-  update
+  update,
+  deleteMonthlySheet as delete
 }
