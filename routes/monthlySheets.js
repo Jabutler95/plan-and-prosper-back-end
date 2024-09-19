@@ -10,6 +10,7 @@ const router = Router()
 // ========= Protected Routes ========= 
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, monthlySheetsCtrl.create)
+router.get('/', checkAuth, monthlySheetsCtrl.index)
 
 
 export { router }
