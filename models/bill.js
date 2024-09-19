@@ -10,6 +10,7 @@ const billSchema = new Schema({
   date: {
     type: Date,
     required: true,
+    // this function will convert the date to an object to support formating our dates as MM/DD/YYYY vs this (YYYY-MM-DDTHH:mm:ss.sssZ)
     set: function (value) {
       return new Date(value)
     }
